@@ -1,0 +1,26 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #0a001b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
