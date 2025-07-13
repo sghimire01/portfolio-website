@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from './components/NavBar';
+import About from './components/About';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
@@ -30,6 +31,7 @@ return (
         <GlobalStyle />
         <NavBar />
         <Hero />
+        <About />
         <Projects />
         <Footer />
       </>
