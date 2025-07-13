@@ -1,42 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const Overlay = styled.div`
-  position: fixed;
-  inset: 0;
-  background: #000;
+import logo from '../assets/logo.png';       
+import loading from "../assets/loading.svg"; 
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const LoaderContainer = styled.div`
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #070707 60%, #16181d 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  z-index: 50;
+  animation: ${fadeIn} 0.8s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
 `;
 
-const Icon = styled.i`
-  font-size: 3rem;
-  animation: spin 1s linear infinite;
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+const LogoImage = styled.img`
+  width: 90px;
+  height: 90px;
+  margin-bottom: 18px;
+  @media (max-width: 500px) {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
   }
 `;
 
-const LoadingScreen: React.FC = () => {
-  const [visible, setVisible] = useState(true);
+const LoaderImage = styled.img`
+  width: 54px;
+  height: 54px;
+  margin-bottom: 24px;
+  /* No spin animation! */
+`;
 
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
+const LoadingText = styled.div`
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #000;
+  margin-top: 0.5rem;
+`;
 
-  if (!visible) return null;
-  return (
-    <Overlay id="loadingScreen">
-      <Icon className="fas fa-spinner" />
-      <p className="text-2xl font-bold mt-4">LOADING...</p>
-    </Overlay>
-  );
-};
+const LoadingScreen: React.FC = () => (
+  <LoaderContainer>
+    <LogoImage src={logo} alt="Site Logo" />
+    <LoaderImage src={loading} alt="Loading..." />
+    <LoadingText>Loading Portfolio...</LoadingText>
+  </LoaderContainer>
+);
 
 export default LoadingScreen;

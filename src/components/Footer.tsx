@@ -1,51 +1,83 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const Foot = styled.footer`
-  background: #000;
-  color: #fff;
-  padding: 1.5rem 0;
-`;
-
-const Container = styled.div`
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+const FooterBar = styled.footer`
+  width: 100%;
+  background: #131313;
+  color: #ccc;
+  padding: 2rem 0 1.4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-
-  @media(min-width:768px) {
-    flex-direction: row;
-  }
+  justify-content: center;
+  box-shadow: 0 -2px 14px rgba(0,0,0,0.07);
 `;
 
-const Social = styled.div`
+const SocialLinks = styled.div`
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 1.1rem;
+`;
 
-  @media(min-width:768px) {
-    margin-top: 0;
+const IconButton = styled.a`
+  background: #23272f;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  transition: background 0.17s, transform 0.17s;
+  cursor: pointer;
+  font-size: 2.1rem;
+
+  &:hover {
+    background: #333;
+    transform: scale(1.15);
+  }
+
+  svg {
+    color: #22d3ee;
+    width: 2rem;
+    height: 2rem;
+    display: block;
   }
 `;
 
-const Icon = styled.i`
-  font-size: 1.5rem;
+const Copy = styled.div`
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  text-align: center;
+  margin-top: 0.6rem;
 `;
 
 const Footer: React.FC = () => (
-  <Foot>
-    <Container>
-      <p>&copy; 2025 Your Name</p>
-      <Social>
-        <a href="https://github.com/sghimire01" target="_blank" rel="noreferrer"><Icon className="fab fa-github" /></a>
-        <a href="https://www.linkedin.com/in/sghimire01/" target="_blank" rel="noreferrer"><Icon className="fab fa-linkedin" /></a>
-        <a href="https://twitter.com/sghimire01" target="_blank" rel="noreferrer"><Icon className="fab fa-twitter" /></a>
-      </Social>
-    </Container>
-  </Foot>
+  <FooterBar>
+    <SocialLinks>
+      <IconButton
+        href="https://linkedin.com/in/sghimire01"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <FaLinkedin />
+      </IconButton>
+      <IconButton
+        href="https://github.com/sghimire01"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
+        <FaGithub />
+      </IconButton>
+    </SocialLinks>
+    <Copy>
+      &copy; {new Date().getFullYear()} Samyak Ghimire. All rights reserved.
+    </Copy>
+  </FooterBar>
 );
 
 export default Footer;

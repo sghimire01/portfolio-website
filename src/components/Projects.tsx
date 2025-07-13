@@ -1,80 +1,191 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import luffyImg from "../assets/gameimage.png";
+import dateImg from "../assets/datenight.png"
 
-const Section = styled.section`
-  padding: 3rem 0;
-  background: #f3f4f6;
-  text-align: center;
+const ProjectsSection = styled.section`
+  width: 100%;
+  padding: 70px 0 48px 0;
+  background: #16161a;
 `;
 
-const Grid = styled.div`
-  max-width: 60rem;
-  margin: 2rem auto 0 auto;
-  display: grid;
-  gap: 2rem;
-  padding: 0 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  align-items: stretch;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 8px;
+  }
 `;
 
-const Card = styled.div`
-  background: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 1rem;
+const ProjectCard = styled.div`
+  background: #22223a;
+  border-radius: 2.2rem;
+  box-shadow: 0 8px 36px rgba(44, 182, 125, 0.09);
+  overflow: hidden;
+  width: 420px;
+  min-width: 320px;
+  max-width: 99vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+
+  &:hover {
+    transform: scale(1.034) translateY(-3px);
+    box-shadow: 0 18px 60px rgba(44, 182, 125, 0.19);
+  }
+
+  @media (max-width: 600px) {
+    width: 98vw;
+    min-width: unset;
+    border-radius: 1.2rem;
+  }
 `;
 
-const Img = styled.img`
+const ImageWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  height: 210px;
+
+  @media (max-width: 600px) {
+    height: 145px;
+  }
+`;
+
+const ProjectImage = styled.img`
   width: 100%;
-  height: 10rem;
+  height: 100%;
   object-fit: cover;
-  border-radius: 0.25rem;
-  margin-bottom: 1rem;
+  transition: transform 0.24s cubic-bezier(0.19, 1, 0.22, 1);
+
+  ${ProjectCard}:hover & {
+    transform: scale(1.085);
+  }
 `;
 
-const Title = styled.h3`
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+const ImageGradient = styled.div`
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(
+    to bottom,
+    rgba(34, 34, 58, 0) 0%,
+    rgba(34, 34, 58, 0.85) 92%
+  );
+  pointer-events: none;
 `;
 
-const Link = styled.a`
-  margin-top: auto;
-  color: #2563eb;
-  &:hover { text-decoration: underline; }
+const CardContent = styled.div`
+  padding: 32px 32px 14px 32px;
+  flex: 1;
+
+  @media (max-width: 600px) {
+    padding: 16px 12px 10px 12px;
+  }
 `;
 
+const ProjectTitle = styled.h3`
+  font-size: 1.38rem;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+`;
+
+const ProjectDesc = styled.p`
+  font-size: 1.03rem;
+  color: #b6b6d8;
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+`;
+
+const CardFooter = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 24px 18px 0;
+  min-height: 45px;
+`;
+
+const GitHubButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #24292f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  margin-left: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 14px 0 rgba(36,41,47,0.14);
+  transition: background 0.17s, transform 0.15s;
+
+  &:hover, &:focus {
+    background: #7f5af0;
+    transform: scale(1.09);
+  }
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+`;
+
+// Dummy project data
 const projects = [
   {
-    title: 'Date Night',
-    description: 'A dating idea generator using Google Maps.',
-    link: 'https://github.com/sghimire01/your-night-out',
-    img: require('../images/datenight.png'),
+    title: "Luffy King",
+    desc: "A 2D Unity Platformer inspired by Jump King",
+    img: luffyImg,
+    github: "https://github.com/sghimire01/luffy-king",
   },
   {
-    title: 'Unity Platformer',
-    description: '2D platformer with custom physics in C#.',
-    link: 'https://github.com/sghimire01/unity-platformer',
-    img: require('../images/gameimage.png'),
+    title: "Date Night",
+    desc: "A dating application with user registration that algorithmically recommends date ideas.",
+    img: dateImg,
+    github: "https://github.com/soei7511/your-night-out",
   },
 ];
 
-const Projects: React.FC = () => (
-  <Section id="projects">
-    <h2 className="text-3xl font-bold">Highlighted Projects</h2>
-    <Grid>
-      {projects.map(p => (
-        <Card key={p.title}>
-          <Img src={p.img} alt={p.title} />
-          <Title>{p.title}</Title>
-          <p className="mb-4">{p.description}</p>
-          <Link href={p.link} target="_blank" rel="noreferrer">View on GitHub</Link>
-        </Card>
+const Projects = () => (
+  <ProjectsSection id="projects">
+    <ProjectsContainer>
+      {projects.map((proj, i) => (
+        <ProjectCard key={i}>
+          <ImageWrapper>
+            <ProjectImage src={proj.img} alt={proj.title} />
+            <ImageGradient />
+          </ImageWrapper>
+          <CardContent>
+            <ProjectTitle>{proj.title}</ProjectTitle>
+            <ProjectDesc>{proj.desc}</ProjectDesc>
+          </CardContent>
+          <CardFooter>
+            <GitHubButton href={proj.github} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+              {/* Inline SVG for GitHub icon */}
+              <svg viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+                -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+                -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82
+                .64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+                2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+                1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+            </GitHubButton>
+          </CardFooter>
+        </ProjectCard>
       ))}
-    </Grid>
-  </Section>
+    </ProjectsContainer>
+  </ProjectsSection>
 );
 
 export default Projects;
