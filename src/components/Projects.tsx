@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import luffyImg from "../assets/gameimage.png";
-import dateImg from "../assets/datenight.png"
-import socialiteImg from '../assets/socialite.jpg'
+import dateImg from "../assets/datenight.png";
+import socialiteImg from '../assets/socialite.jpg';
+import stockImg from '../assets/stock.png';
+import mediaImg from '../assets/mediahost.png';
+import modelImg from '../assets/engagement.png';
+import trieImg from '../assets/trie.png';
 
 const ProjectsSection = styled.section`
   width: 100%;
@@ -197,11 +201,30 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Media Host",
+    desc: "A full-stack media hosting platform, supporting uploads, embeds, and downloads.",
+    img: mediaImg,
+    skills: ['React', 'TypeScript', 'AWS', 'REST'],
+  },
+  {
     title: "Luffy King",
     desc: "A Unity Platformer inspired by Jump King.",
     img: luffyImg,
     github: "https://github.com/sghimire01/luffy-king",
     skills: ['C#', 'Unity'],
+  },
+  {
+    title: "Engagement Model, Alliant National Title Insurance",
+    desc: "A web application made for Alliant made to showcase Title Agents that they should engage with",
+    img: modelImg,
+    skills: ['ML', 'Python', 'Jupyter', 'Node', 'Docker']
+  },
+  {
+    title: "Samwise-Portfolio",
+    desc: "A dashboard that visualizes various stock market metrics in real-time, pulling data from yfinance.",
+    img: stockImg,
+    github: "https://github.com/sghimire01/Samwise-Portfolio",
+    skills: ['React', 'Python']
   },
   {
     title: "Date Night",
@@ -217,7 +240,13 @@ const projects: Project[] = [
     github: "https://github.com/soga2001/BasedBook",
     skills: ['Typescript', 'Python', 'React', 'MongoDB']
   },
-  
+  {
+    title: "Trie vs BST Runtime",
+    desc: "A C++ Algorithm to check speeds of different DSA",
+    img: trieImg,
+    github: "https://github.com/sghimire01/Quinlan_Ghimire_2275Project",
+    skills: ['C++', 'DSA']
+  },
 ];
 
 const Projects = () => (
