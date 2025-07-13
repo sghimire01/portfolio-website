@@ -7,14 +7,16 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255,255,255,0.6);
+  background: #22223a;
   backdrop-filter: blur(8px);
   border-radius: 2rem;
   box-shadow: 0 4px 32px rgba(0,0,0,0.08);
   max-width: 700px;
   margin: 2rem auto;
-
+  
+  scroll-margin-top: 60px;
   @media (max-width: 600px) {
+    scroll-margin-top: 55px;
     padding: 2rem 0.5rem;
     border-radius: 1.2rem;
   }
@@ -33,14 +35,14 @@ const Avatar = styled.img`
 const Name = styled.h2`
   font-size: 2rem;
   font-weight: 800;
-  color: #23272f;
+  color: #fff;
   margin-bottom: 0.5rem;
   letter-spacing: -1px;
 `;
 
 const Description = styled.p`
   font-size: 1.1rem;
-  color: #3d4351;
+  color: #b6b6d8;
   text-align: center;
   margin-bottom: 1.3rem;
   max-width: 500px;
@@ -54,8 +56,8 @@ const TagList = styled.div`
 `;
 
 const Tag = styled.span`
-  background: #eceff4;
-  color: #485563;
+  background: #fff;
+  color: #7f5af0;
   font-size: 0.95rem;
   padding: 0.35rem 1rem;
   border-radius: 999px;

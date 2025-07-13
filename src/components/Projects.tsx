@@ -215,7 +215,7 @@ const projects: Project[] = [
     desc: "A twitter-like social media application",
     img: socialiteImg,
     github: "https://github.com/soga2001/BasedBook",
-    skills: ['Typescript', 'Python', 'Node.js', 'MongoDB']
+    skills: ['Typescript', 'Python', 'React', 'MongoDB']
   },
   
 ];

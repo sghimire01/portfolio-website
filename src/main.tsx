@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import '@fontsource/lato/400.css';
+import '@fontsource/lato/700.css';
+import '@fontsource/lato/900.css';
+import '@fontsource/nunito/700.css';
+import '@fontsource/nunito/800.css';
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -10,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    background: #070707; /* match your loading screen! */
+    background: rgb(29, 29, 29); /* match your loading screen! */
     overflow-x: hidden;
   }
   #root, #app {

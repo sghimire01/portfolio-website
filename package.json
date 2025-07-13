@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.6",
+    "@fontsource/lato": "^5.2.6",
+    "@fontsource/nunito": "^5.2.6",
     "framer-motion": "^12.23.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
