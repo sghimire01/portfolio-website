@@ -3,10 +3,11 @@ import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import './App.css';
+import LoadingScreen from './components/LoadingScreen';
 
 const App: React.FC = () => (
-  <div className="App">
+  <div className="font-[Inter]">
+    <LoadingScreen />
     <NavBar />
     <Hero />
     <Projects />
