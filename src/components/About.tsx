@@ -69,7 +69,11 @@ const AboutMe: React.FC = () => (
     <Avatar src="https://cdn.discordapp.com/attachments/891814909388656641/1393988712454688899/images.png?ex=68752ca8&is=6873db28&hm=8da09d2c9b6a23cef5fefe250642493551b5ff45380336575f99c36cc6c92aa8&" alt="Samyak Ghimire" />
     <Name>About Me</Name>
     <Description>
-      Deeply passionate about using software to solve complex challenges beyond human capabilities. Aspire to develop innovative solutions that bridge the gap between advanced technology and practical applications.
+      I am a software engineer specializing in designing and building robust, scalable data platforms and innovative applications. My professional experience spans across industries, including medtech, where I have developed high-performance Python REST APIs, automated large-scale ETL workflows, and created custom machine learning solutions to enhance analytics and operational efficiency.
+
+    <br/> <br/> I thrive in dynamic, collaborative environments, successfully leading and contributing to full-stack projects such as Dockerized web applications integrated with machine learning models and interactive social and gaming platforms. My technical proficiency, combined with a strong ability to adapt and collaborate, allows me to consistently deliver impactful solutions aligned with strategic business goals.
+
+    <br/> <br/>Committed to continuous learning and growth, I leverage my technical expertise and collaborative mindset to drive meaningful results and support the success of the teams and organizations I join.
     </Description>
     <TagList>
       <Tag>Programming</Tag>
