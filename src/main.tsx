@@ -7,6 +7,7 @@ import '@fontsource/lato/900.css';
 import '@fontsource/nunito/700.css';
 import '@fontsource/nunito/800.css';
 import { createGlobalStyle } from "styled-components";
+import { BrowserRouter } from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,12 +24,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
+ReactDOM.createRoot(document.getElementById('root')!).render(
+<React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

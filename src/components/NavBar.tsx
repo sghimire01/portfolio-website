@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
+import { useNavigate, useNavigation } from 'react-router-dom';
 
 /* —————  CONSTANTS  ————— */
 const NAV_HEIGHT = 60;                  // keep this in sync with <NavContainer/>
@@ -123,6 +124,7 @@ const Hamburger = styled.div`
 
 /* —————  COMPONENT  ————— */
 const NavBar: React.FC = () => {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -197,7 +199,10 @@ const NavBar: React.FC = () => {
   return (
     <Nav scrolled={scrolled}>
       <NavContainer>
-        <Logo href="https://samyakghimire.com/" onClick={e => { e.preventDefault(); smoothScroll("home"); }}>
+        <Logo href="/" onClick={e => {
+          e.preventDefault();
+          navigate("/");
+        }}>
           <img src={logo} alt="Logo" />
         </Logo>
 

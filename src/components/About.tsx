@@ -72,10 +72,9 @@ const AboutMe: React.FC = () => (
       Deeply passionate about using software to solve complex challenges beyond human capabilities. Aspire to develop innovative solutions that bridge the gap between advanced technology and practical applications.
     </Description>
     <TagList>
-      <Tag>Python</Tag>
-      <Tag>C++</Tag>
-      <Tag>SQL</Tag>
-      <Tag>ETL</Tag>
+      <Tag>Programming</Tag>
+      <Tag>Engineering</Tag>
+      <Tag>Analysis</Tag>
     </TagList>
   </AboutSection>
 );
