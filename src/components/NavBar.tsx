@@ -197,7 +197,7 @@ const NavBar: React.FC = () => {
   return (
     <Nav scrolled={scrolled}>
       <NavContainer>
-        <Logo href="#home" onClick={e => { e.preventDefault(); smoothScroll("home"); }}>
+        <Logo href="https://samyakghimire.com/" onClick={e => { e.preventDefault(); smoothScroll("home"); }}>
           <img src={logo} alt="Logo" />
         </Logo>
 

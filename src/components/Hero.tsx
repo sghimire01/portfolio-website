@@ -182,7 +182,7 @@ const Hero: React.FC = () => {
         </HeroSubtitle>
 
         <HeroButton
-          href="/Sam_Ghimire_Resume.pdf"
+          href="/resume"
           target="_blank"
           rel="noopener noreferrer"
         >
