@@ -23,12 +23,12 @@ const AboutSection = styled.section`
 `;
 
 const Avatar = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   border: 3px solid #fff;
 `;
 
@@ -66,7 +66,7 @@ const Tag = styled.span`
 
 const AboutMe: React.FC = () => (
   <AboutSection id='about'>
-    <Avatar src="https://cdn.discordapp.com/attachments/891814909388656641/1393988712454688899/images.png?ex=68752ca8&is=6873db28&hm=8da09d2c9b6a23cef5fefe250642493551b5ff45380336575f99c36cc6c92aa8&" alt="Samyak Ghimire" />
+    <Avatar src="../assets/headshot.png" alt="Samyak Ghimire" />
     <Name>About Me</Name>
     <Description>
       I am a software engineer specializing in designing and building robust, scalable data platforms and innovative applications. My professional experience spans across industries, including medtech, where I have developed high-performance Python REST APIs, automated large-scale ETL workflows, and created custom machine learning solutions to enhance analytics and operational efficiency.

@@ -204,7 +204,7 @@ const projects: Project[] = [
     title: "Media Host",
     desc: "A full-stack media hosting platform, supporting uploads, embeds, and downloads.",
     img: mediaImg,
-    skills: ['React', 'TypeScript', 'AWS', 'REST'],
+    skills: ['React (Vite)', 'TypeScript', 'AWS', 'REST'],
   },
   {
     title: "Luffy King",
