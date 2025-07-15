@@ -2,6 +2,7 @@ import React, { MouseEvent } from "react";
 import styled, { keyframes } from "styled-components";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import bgImg from "../assets/head-bg.gif";
 
 /*  ─────────────────────────  HELPERS  ──────────────────────────── */
@@ -100,6 +101,39 @@ const ScrollDownBtn = styled.button`
   @media (max-width:768px){ display:none; }   /* arrow hidden on phones */
 `;
 
+const SocialIcons = styled.div`
+  position: absolute;
+  left: 32px; bottom: 32px;
+  display: flex;
+  gap: 16px;
+
+  @media (max-width:768px){ display:none; }   /* hidden on phones like the down button */
+`;
+
+const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border: 2px solid rgba(255,255,255,.7);
+  border-radius: 50%;
+  background: none;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+`;
+
 /*  ─────────────────────────  TYPOGRAPHY  ───────────────────────── */
 
 const HeroTitle = styled.h1`
@@ -195,6 +229,25 @@ const Hero: React.FC = () => {
           <path d="M12 16.25a1 1 0 01-.7-.29l-6.46-6.46a1 1 0 011.42-1.42L12 13.79l5.74-5.71a1 1 0 111.42 1.42l-6.46 6.46a1 1 0 01-.7.29z"/>
         </svg>
       </ScrollDownBtn>
+
+      <SocialIcons>
+        <SocialIcon 
+          href="https://linkedin.com/in/sghimire01" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+        >
+          <FaLinkedin />
+        </SocialIcon>
+        <SocialIcon 
+          href="https://github.com/sghimire01" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+        >
+          <FaGithub />
+        </SocialIcon>
+      </SocialIcons>
     </HeroSection>
   );
 };
